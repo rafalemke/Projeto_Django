@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tem certeza que deseja deletar o evento "{{ evento.nome }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+        <a href="{% url 'lista_eventos' %}">Cancelar</a>
+    </form>
+
+{% endblock content %}
